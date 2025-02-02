@@ -24,21 +24,26 @@ This is a simple yet powerful Todo App built with **React Native** and **Expo**.
 
 - **Node.js**: Make sure you have Node.js installed on your machine.
 - **Expo CLI**: Install Expo CLI globally using npm:
+
   ```bash
   npm install -g expo-cli
 
 ### Installation
 
 - **Clone the repository**:
+
   ```bash
   git clone (https://github.com/AugustineTamba/todomaster.git)
+
   cd todomaster
 
 - **Install dependencies**:
+
   ```bash
   npm install
 
 - **Start the development server**:
+
   ```bash
   npm start
 
@@ -48,19 +53,14 @@ Use the Expo Go app on your mobile device to scan the QR code displayed in the t
 Alternatively, you can run the app on an Android or iOS emulator.
 
 ### Code Structure
-App.js: The main entry point of the app.
 
-Intro.js: The onboarding screen where users enter their name.
-
-TodoScreen.js: The main screen where users manage their todos.
-
-TodoModal.js: A modal for adding or editing a todo.
-
-Todo.js: A component that represents a single todo item.
-
-SearchBar.js: A component for searching todos.
-
-RoundIconBtn.js: A reusable button component with an icon.
+- **App.js**: The main entry point of the app.
+- **Intro.js**: The onboarding screen where users enter their name.
+- **TodoScreen.js**: The main screen where users manage their todos.
+- **TodoModal.js**: A modal for adding or editing a todo.
+- **Todo.js**: A component that represents a single todo item.
+- **SearchBar.js**: A component for searching todos.
+- **RoundIconBtn.js**: A reusable button component with an icon.
 
 ### Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
@@ -72,8 +72,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ### **APP SCREENSHOT**
 
-![1](https://github.com/user-attachments/assets/31d5fc01-e604-4f2b-8e14-6174f6a8d9d4)
-![2](https://github.com/user-attachments/assets/62467e12-b66d-4245-9397-b9ea2570f45f)
-![3](https://github.com/user-attachments/assets/eb0762b7-dab4-475f-b055-657618adc7d1)
-![4](https://github.com/user-attachments/assets/5cb26fef-5063-4a7b-893e-c47699a18bc4)
+<><img src="https://github.com/user-attachments/assets/31d5fc01-e604-4f2b-8e14-6174f6a8d9d4" width="300" />
+<img src="https://github.com/user-attachments/assets/62467e12-b66d-4245-9397-b9ea2570f45f" width="300" />
+<img src="https://github.com/user-attachments/assets/eb0762b7-dab4-475f-b055-657618adc7d1" width="300" />
+<img src="https://github.com/user-attachments/assets/5cb26fef-5063-4a7b-893e-c47699a18bc4" width="300" /></>
 

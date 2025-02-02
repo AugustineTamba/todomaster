@@ -6,6 +6,6 @@ export default {
     LIGHT_GRAY: '#BDC3C7',
     GRAY: '#95A5A6',
     DANGER: '#E74C3C',
-    HOME: '#fc466b'
+    HOME: '#FF3B3B'
 };
   

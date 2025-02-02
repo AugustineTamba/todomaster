@@ -8,21 +8,21 @@ export default function SearchBar({ containerStyle, onSearch }) {
 
   // Handle text input changes
   const handleChangeText = (text) => {
-    setQuery(text); // Update the query state
-    onSearch(text); // Pass the query to the parent component
+    setQuery(text); 
+    onSearch(text); 
   };
 
   // Clear the search input
   const handleClear = () => {
-    setQuery(''); // Clear the query state
-    onSearch(''); // Pass an empty query to the parent component
+    setQuery(''); 
+    onSearch(''); 
   };
 
   return (
     <View style={[styles.container, { ...containerStyle }]}>
       <TextInput
-        value={query} // Bind the input value to the query state
-        onChangeText={handleChangeText} // Handle text changes
+        value={query} 
+        onChangeText={handleChangeText} 
         style={styles.searchBar}
         placeholder='Search here...'
         placeholderTextColor={colors.LIGHT_GRAY}
@@ -32,7 +32,7 @@ export default function SearchBar({ containerStyle, onSearch }) {
           name='close'
           size={20}
           color={colors.PRIMARY}
-          onPress={handleClear} // Clear the input when pressed
+          onPress={handleClear} 
           style={styles.clearIcon}
         />
       ) : null}
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: colors.PRIMARY,
     height: 40,
-    borderRadius: 20, // Rounded corners
+    borderRadius: 20, 
     paddingLeft: 15,
-    fontSize: 16, // Slightly smaller font size
-    color: colors.LIGHT, // Dark text color for better readability
-    backgroundColor: colors.WHITE, // White background
-    paddingRight: 40, // Add padding to prevent text overlap with the clear icon
+    fontSize: 16, 
+    color: colors.LIGHT, 
+    backgroundColor: colors.WHITE, 
+    paddingRight: 40,
   },
   container: {
     justifyContent: 'center',

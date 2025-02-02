@@ -3,35 +3,35 @@ import colors from '../misc/colors';
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 16, // Add horizontal padding
+    paddingHorizontal: 16, 
     flex: 1,
     zIndex: 1,
-    backgroundColor: colors.DARK, // Ensure background color is set
+    backgroundColor: colors.DARK, 
   },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10, // Add vertical padding
-    paddingHorizontal: 1, // Add horizontal padding
-    backgroundColor: colors.DARK, // Set a background color for the header
-    elevation: 3, // Add shadow
+    paddingVertical: 10, 
+    paddingHorizontal: 1, 
+    backgroundColor: colors.DARK, 
+    elevation: 3, 
   },
   backButton: {
     marginRight: 5,
-    padding: 1, // Add padding for better touch area
+    padding: 1,
   },
   header: {
-    fontSize: 22, // Slightly larger font size
+    fontSize: 22, 
     fontWeight: 'bold',
-    color: colors.LIGHT, // Ensure text color is visible
+    color: colors.LIGHT, 
   },
 
 emptyHeaderContainer: {
-    flexDirection: 'row', // Arrange items in a row
-    alignItems: 'center', // Align text and button vertically
-    justifyContent: 'flex-end', // Push items to the right
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    justifyContent: 'flex-end', 
     marginBottom: 10,
-    paddingHorizontal: 10, // Add padding to match other elements
+    paddingHorizontal: 10, 
   },
   emptyHeader: {
     fontSize: 24,
@@ -39,7 +39,7 @@ emptyHeaderContainer: {
     fontWeight: 'bold',
     opacity: 0.3,
     color: colors.LIGHT,
-    marginRight: 10, // Space between text and button
+    marginRight: 10, 
     flex: 1,
     textAlign: 'center',
     marginLeft: 65,
@@ -55,10 +55,7 @@ emptyHeaderContainer: {
   tasksHeader: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: colors.LIGHT,
-    // marginTop: 10,
-    // marginBottom: 10,
-    // textAlign: 'center',
+    color: colors.LIGHT
   },
 
   emptyListText: {

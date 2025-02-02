@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 25,
+        backgroundColor: colors.DARK,
     },
     textInput: {
         width,

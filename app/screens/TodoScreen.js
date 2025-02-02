@@ -11,17 +11,19 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Toast from 'react-native-toast-message';
 
 export default function TodoScreen({ user, onBack }) {
-  const [greetings, setGreetings] = useState('');
-  const [modalVisible, setModalVisible] = useState(false);
-  const [todos, setTodos] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [editTodo, setEditTodo] = useState(null);
+  const [greetings, setGreetings] = useState(''); // Greeting message based on time of day
+  const [modalVisible, setModalVisible] = useState(false); // Controls visibility of the TodoModal
+  const [todos, setTodos] = useState([]); // List of todos
+  const [searchQuery, setSearchQuery] = useState(''); // Search query for filtering todos
+  const [editTodo, setEditTodo] = useState(null); // Todo item being edited
 
+  // Effect to load todos and determine greeting when the user changes
   useEffect(() => {
     findTodos();
     determineGreeting();
-  }, [user]); // Fetch tasks whenever the user changes
+  }, [user]);
 
+  // Function to determine the greeting based on the current time
   const determineGreeting = () => {
     const hrs = new Date().getHours();
     if (hrs < 12) setGreetings('Morning');
@@ -29,6 +31,7 @@ export default function TodoScreen({ user, onBack }) {
     else setGreetings('Evening');
   };
 
+  // Function to fetch todos from AsyncStorage
   const findTodos = async () => {
     if (!user || !user.name) return;
   
@@ -43,11 +46,11 @@ export default function TodoScreen({ user, onBack }) {
         setTodos([]);
       }
     } catch (error) {
-      console.error('Failed to fetch todos:', error);
-      // Optionally, show an error message to the user
+      console.error('Failed to fetch todos:', error)
     }
   };
 
+  // Function to handle submission of a new or edited todo
   const handleOnSubmit = async (title, desc, date) => {
     const newTodo = {
       id: editTodo ? editTodo.id : Date.now(),
@@ -78,6 +81,7 @@ export default function TodoScreen({ user, onBack }) {
     });
   };
   
+  // Function to handle deletion of a todo
   const handleDeleteTodo = async (id) => {
     const normalizedName = user.name.trim().toLowerCase();
     const userKey = `todos_${normalizedName}`;
@@ -93,19 +97,23 @@ export default function TodoScreen({ user, onBack }) {
     });
   };
 
+  // Function to handle editing of a todo
   const handleEditTodo = (todo) => {
     setEditTodo(todo);
     setModalVisible(true);
   };
 
+  // Function to handle search query changes
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
 
+  // Function to handle back button press
   const handleBack = () => {
     if (onBack) onBack();
   };
 
+  // Filter todos based on the search query
   const filteredTodos = todos.filter((todo) =>
     todo.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -115,14 +123,17 @@ export default function TodoScreen({ user, onBack }) {
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor={colors.LIGHT} />
         <View style={styles.headerContainer}>
+
           <TouchableOpacity onPress={handleBack} style={styles.backButton}>
             <Icon name="arrowleft" size={24} color={colors.LIGHT} />
           </TouchableOpacity>
+
           <Text style={styles.header}>{`Good ${greetings}, ${user.name}`}</Text>
         </View>
         <SearchBar containerStyle={{ marginVertical: 15 }} onSearch={handleSearch} />
         <Text style={styles.tasksHeader}>My Tasks</Text>
 
+        {/* FlatList to display todos */}
         <FlatList
           data={filteredTodos}
           keyExtractor={(item) => item.id.toString()}
@@ -133,8 +144,8 @@ export default function TodoScreen({ user, onBack }) {
               onEdit={() => handleEditTodo(item)}
             />
           )}
-          initialNumToRender={10} // Render only 10 items initially
-          windowSize={5} // Reduce the window size for better performance
+          initialNumToRender={10} 
+          windowSize={5} 
           contentContainerStyle={{ paddingBottom: 100 }}
           ListEmptyComponent={
             <Text style={styles.emptyListText}>No tasks found. Add a new task!</Text>

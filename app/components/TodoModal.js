@@ -16,11 +16,13 @@ import colors from '../misc/colors';
 import { Dimensions } from 'react-native';
 
 export default function TodoModal({ visible, onClose, onSubmit, note, isEdit }) {
+  // State variables for task title, description, date, and date picker visibility
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
   const [date, setDate] = useState(new Date());
   const [showPicker, setShowPicker] = useState(false);
 
+  // Effect to initialize state when the modal is opened for editing
   useEffect(() => {
     if (isEdit && note) {
       setTitle(note.title || '');
@@ -31,6 +33,7 @@ export default function TodoModal({ visible, onClose, onSubmit, note, isEdit }) 
     }
   }, [isEdit, note]);
 
+  // Function to reset the form state
   const resetState = () => {
     setTitle('');
     setDesc('');
@@ -38,14 +41,18 @@ export default function TodoModal({ visible, onClose, onSubmit, note, isEdit }) 
     setShowPicker(false);
   };
 
+  // Function to handle form submission
   const handleSubmit = () => {
+    // Prevent submission if the title is empty
     if (!title.trim()) return;
 
+    // Call the onSubmit function with the task details
     onSubmit(title, desc, date);
     resetState();
     onClose();
   };
 
+  // Function to handle modal close
   const handleClose = () => {
     resetState();
     onClose();
@@ -54,6 +61,7 @@ export default function TodoModal({ visible, onClose, onSubmit, note, isEdit }) 
   return (
     <Modal visible={visible} animationType="slide" transparent>
       <SafeAreaView style={styles.modalContainer}>
+
         <StatusBar hidden />
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.modalContent}>
@@ -103,6 +111,7 @@ export default function TodoModal({ visible, onClose, onSubmit, note, isEdit }) 
               <TouchableOpacity style={styles.saveBtn} onPress={handleSubmit} accessibilityLabel="Save Task">
                 <Text style={styles.btnText}>Save</Text>
               </TouchableOpacity>
+
               <TouchableOpacity style={styles.cancelBtn} onPress={handleClose} accessibilityLabel="Cancel">
                 <Text style={styles.btnText}>Cancel</Text>
               </TouchableOpacity>

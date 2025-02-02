@@ -33,7 +33,7 @@ This is a simple yet powerful Todo App built with **React Native** and **Expo**.
 - **Clone the repository**:
 
   ```bash
-  git clone (https://github.com/AugustineTamba/todomaster.git)
+  git clone https://github.com/AugustineTamba/todomaster.git
 
   cd todomaster
 
@@ -72,8 +72,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ### **APP SCREENSHOT**
 
-<><img src="https://github.com/user-attachments/assets/31d5fc01-e604-4f2b-8e14-6174f6a8d9d4" width="300" />
+<img src="https://github.com/user-attachments/assets/31d5fc01-e604-4f2b-8e14-6174f6a8d9d4" width="300" />
 <img src="https://github.com/user-attachments/assets/62467e12-b66d-4245-9397-b9ea2570f45f" width="300" />
 <img src="https://github.com/user-attachments/assets/eb0762b7-dab4-475f-b055-657618adc7d1" width="300" />
-<img src="https://github.com/user-attachments/assets/5cb26fef-5063-4a7b-893e-c47699a18bc4" width="300" /></>
+<img src="https://github.com/user-attachments/assets/5cb26fef-5063-4a7b-893e-c47699a18bc4" width="300" />
 
